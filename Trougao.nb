@@ -1,0 +1,1245 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     53621,       1237]
+NotebookOptionsPosition[     53300,       1221]
+NotebookOutlinePosition[     53642,       1236]
+CellTagsIndexPosition[     53599,       1233]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"aa", ",", "bb"}], "}"}], "=", "p1"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"cc", ",", "dd"}], "}"}], "=", "p2"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ee", ",", "ff"}], "}"}], "=", "p3"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"tline", "=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"aa", ",", "bb"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               FractionBox[
+                RowBox[{"cc", "+", "ee"}], "2"], ",", 
+               FractionBox[
+                RowBox[{"dd", "+", "ff"}], "2"]}], "}"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"nline", "=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"{", 
+         RowBox[{"Red", ",", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"cc", ",", "dd"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               FractionBox[
+                RowBox[{"aa", "+", "ee"}], "2"], ",", 
+               FractionBox[
+                RowBox[{"bb", "+", "ff"}], "2"]}], "}"}]}], "}"}], "]"}]}], 
+         "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"kline", "=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"ee", ",", "ff"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"aa", "+", "cc"}], "2"], ",", 
+             FractionBox[
+              RowBox[{"bb", "+", "dd"}], "2"]}], "}"}]}], "}"}], "]"}], 
+        "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tline", "[", 
+      RowBox[{"p1_", ",", "p2_", ",", "p3_"}], "]"}], ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Blue", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{"p1", ",", 
+           FractionBox[
+            RowBox[{"p3", "+", "p2"}], "2"]}], "}"}], "]"}]}], "}"}], "]"}]}],
+     ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"nline", "[", 
+      RowBox[{"p1_", ",", "p2_", ",", "p3_"}], "]"}], ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{"p2", ",", 
+           FractionBox[
+            RowBox[{"p1", "+", "p3"}], "2"]}], "}"}], "]"}]}], "}"}], "]"}]}],
+     ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"kline", "[", 
+      RowBox[{"p1_", ",", "p2_", ",", "p3_"}], "]"}], ":=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{"p3", ",", 
+           FractionBox[
+            RowBox[{"p1", "+", "p2"}], "2"]}], "}"}], "]"}]}], "}"}], "]"}]}],
+     ";", "\n", 
+    RowBox[{"Pane", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Row", "[", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Labeled", "[", 
+          RowBox[{
+           RowBox[{"Show", "[", 
+            RowBox[{
+             RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"{", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Opacity", "[", ".3", "]"}], ",", 
+                   RowBox[{"Lighter", "@", 
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "]"}]}], ",", 
+                   RowBox[{"Polygon", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"p1", ",", "p2", ",", "p3"}], "}"}], "]"}]}], 
+                  "}"}], ",", "\[IndentingNewLine]", "Black", ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<A(\>\"", ",", "Blue", ",", "12"}], "]"}], 
+                    ",", " ", 
+                    RowBox[{"Style", "[", " ", 
+                    RowBox[{"aa", ",", "Blue", ",", "12"}], "]"}], ",", " ", 
+                    RowBox[{"Style", "[", " ", 
+                    RowBox[{"\"\<, \>\"", ",", "Blue", ",", "12"}], "]"}], 
+                    ",", 
+                    RowBox[{"Style", "[", "  ", 
+                    RowBox[{"bb", ",", "Blue", ",", "12"}], "]"}], ",", 
+                    RowBox[{"Style", "[", " ", 
+                    RowBox[{"\"\<)\>\"", ",", "Blue", ",", "12"}], "]"}]}], 
+                    "}"}], "]"}], " ", ",", 
+                   RowBox[{"p1", "-", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<B(\>\"", ",", "Blue"}], "]"}], ",", "  ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"cc", ",", "Blue"}], "]"}], ",", "  ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<, \>\"", ",", "Blue"}], "]"}], ",", "  ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"dd", ",", "Blue"}], "]"}], ",", " ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<)\>\"", ",", "Blue"}], "]"}]}], "}"}], "]"}],
+                    " ", ",", 
+                   RowBox[{"p2", "+", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<C(\>\"", ",", "Blue"}], "]"}], ",", 
+                    RowBox[{"Style", "[", "  ", 
+                    RowBox[{"ee", ",", "Blue"}], "]"}], ",", " ", 
+                    RowBox[{"Style", "[", " ", 
+                    RowBox[{"\"\<, \>\"", ",", "Blue"}], "]"}], ",", "  ", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"ff", ",", "Blue"}], "]"}], ",", 
+                    RowBox[{"Style", "[", " ", 
+                    RowBox[{"\"\<)\>\"", ",", "Blue"}], "]"}]}], "}"}], "]"}],
+                    " ", ",", 
+                   RowBox[{"p3", "+", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<\!\(\*SubscriptBox[\(C\), \(1\)]\)\>\"", ",", 
+                    "Blue"}], "]"}], "}"}], "]"}], " ", ",", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"aa", "+", "cc"}], "2"], ",", 
+                    FractionBox[
+                    RowBox[{"bb", "+", "dd"}], "2"]}], "}"}], "-", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}], ",", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<\!\(\*SubscriptBox[\(B\), \(1\)]\)\>\"", ",", 
+                    "Blue"}], "]"}], "}"}], "]"}], " ", ",", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"aa", "+", "ee"}], "2"], ",", 
+                    FractionBox[
+                    RowBox[{"bb", "+", "ff"}], "2"]}], "}"}], "+", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}], ",", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<\!\(\*SubscriptBox[\(A\), \(1\)]\)\>\"", ",", 
+                    "Blue"}], "]"}], "}"}], "]"}], " ", ",", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"ee", "+", "cc"}], "2"], ",", 
+                    FractionBox[
+                    RowBox[{"ff", "+", "dd"}], "2"]}], "}"}], "+", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}], ",", 
+                 RowBox[{"Text", "[", 
+                  RowBox[{
+                   RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<T\>\"", ",", "Blue"}], "]"}], "}"}], "]"}], 
+                   " ", ",", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"ee", "+", "cc", "+", "aa"}], "3"], ",", 
+                    FractionBox[
+                    RowBox[{"ff", "+", "dd", "+", "bb"}], "3"]}], "}"}], "+", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", ".75"}], "}"}]}]}], " ", "]"}]}], 
+                "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+               RowBox[{"PlotRange", "\[Rule]", "9"}], ",", 
+               RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+               RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+               RowBox[{"FrameStyle", "\[Rule]", 
+                RowBox[{"Directive", "[", 
+                 RowBox[{"Black", ",", "20"}], "]"}]}], ",", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"400", ",", "350"}], "}"}]}]}], 
+              "\[IndentingNewLine]", "]"}], ",", 
+             RowBox[{"Through", "[", 
+              RowBox[{"showderivs", "[", 
+               RowBox[{"p1", ",", "p2", ",", "p3"}], "]"}], "]"}], ",", 
+             RowBox[{"Graphics", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"aa", "+", "cc"}], "2"], ",", 
+                   FractionBox[
+                    RowBox[{"bb", "+", "dd"}], "2"]}], "}"}], "]"}]}], "}"}], 
+              "]"}], ",", 
+             RowBox[{"Graphics", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"aa", "+", "ee"}], "2"], ",", 
+                   FractionBox[
+                    RowBox[{"bb", "+", "ff"}], "2"]}], "}"}], "]"}]}], "}"}], 
+              "]"}], ",", 
+             RowBox[{"Graphics", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"cc", "+", "ee"}], "2"], ",", 
+                   FractionBox[
+                    RowBox[{"dd", "+", "ff"}], "2"]}], "}"}], "]"}]}], "}"}], 
+              "]"}], ",", 
+             RowBox[{"Graphics", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"PointSize", "[", "Large", "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"aa", "+", "cc", "+", "ee"}], "3"], ",", 
+                   FractionBox[
+                    RowBox[{"bb", "+", "dd", "+", "ff"}], "3"]}], "}"}], 
+                 "]"}]}], "}"}], "]"}]}], "]"}], ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+            "\"\<Autor: Amela Crnki\[CAcute], prof.\>\"", ",", "Bold"}], 
+            "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Column", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Du\[ZHacek]ine stranica trougla:\>\"", ",", "Bold", ",",
+                   "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<d(A,B)\>\"", ",", "\"\< = \>\"", ",", 
+                 "\"\<\!\(\*SqrtBox[\(\*SuperscriptBox[\((\*SubscriptBox[\(x\)\
+, \(B\)] - \*SubscriptBox[\(x\), \(A\)])\), \(2\)] + \
+\*SuperscriptBox[\((\*SubscriptBox[\(y\), \(B\)] - \*SubscriptBox[\(y\), \
+\(A\)])\), \(2\)]\)]\) \>\"", ",", "\"\< = \>\"", ",", " ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   SqrtBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"cc", "-", "aa"}], ")"}], "2"], "+", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"dd", "-", "bb"}], ")"}], "2"]}]], ",", "Blue"}], 
+                  "]"}]}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<d(A,C)\>\"", ",", "\"\< = \>\"", ",", 
+                 "\"\<\!\(\*SqrtBox[\(\*SuperscriptBox[\((\*SubscriptBox[\(x\)\
+, \(C\)] - \*SubscriptBox[\(x\), \(A\)])\), \(2\)] + \
+\*SuperscriptBox[\((\*SubscriptBox[\(y\), \(C\)] - \*SubscriptBox[\(y\), \
+\(A\)])\), \(2\)]\)]\) \>\"", ",", "\"\< = \>\"", ",", "  ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   SqrtBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"ee", "-", "aa"}], ")"}], "2"], "+", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"ff", "-", "bb"}], ")"}], "2"]}]], ",", "Blue"}], 
+                  "]"}]}], "}"}], "]"}]}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<d(B,C)\>\"", ",", "\"\< = \>\"", ",", 
+                 "\"\<\!\(\*SqrtBox[\(\*SuperscriptBox[\((\*SubscriptBox[\(x\)\
+, \(C\)] - \*SubscriptBox[\(x\), \(B\)])\), \(2\)] + \
+\*SuperscriptBox[\((\*SubscriptBox[\(y\), \(C\)] - \*SubscriptBox[\(y\), \
+\(B\)])\), \(2\)]\)]\) \>\"", ",", "\"\< = \>\"", ",", " ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   SqrtBox[
+                    RowBox[{
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"ee", "-", "cc"}], ")"}], "2"], "+", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"ff", "-", "dd"}], ")"}], "2"]}]], ",", "Blue"}], 
+                  "]"}]}], "}"}], "]"}]}]}], ",", "\[IndentingNewLine]", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Povr\[SHacek]ina trougla:\>\"", ",", "Bold", ",", 
+                  "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"\"\<P\>\"", ",", "\"\< = \>\"", ",", 
+                 FractionBox["1", "2"], ",", 
+                 RowBox[{"RawBoxes", "[", "\"\<|\>\"", "]"}], ",", 
+                 "\"\<\!\(\*GridBox[{
+{GridBox[{
+{GridBox[{
+{GridBox[{
+{SubscriptBox[\"x\", \"A\"]},
+{SubscriptBox[\"x\", \"B\"]}
+}]},
+{SubscriptBox[\"x\", \"C\"]}
+}], GridBox[{
+{GridBox[{
+{SubscriptBox[\"y\", \"A\"]},
+{SubscriptBox[\"y\", \"B\"]}
+}]},
+{SubscriptBox[\"y\", \"C\"]}
+}]}
+}], GridBox[{
+{GridBox[{
+{1},
+{1}
+}]},
+{1}
+}]}
+}]\)\>\"", ",", 
+                 RowBox[{"RawBoxes", "[", "\"\<|\>\"", "]"}], ",", 
+                 "\"\< = \>\"", ",", " ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{".5", " ", 
+                    RowBox[{"Det", "@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"aa", ",", "bb", ",", "1"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"cc", ",", "dd", ",", "1"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"ee", ",", "ff", ",", "1"}], "}"}]}], "}"}]}]}], 
+                   " ", ",", "Blue"}], "]"}]}], "}"}], "]"}]}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Sredi\[SHacek]ta stranica trougla:\>\"", ",", "Bold", 
+                  ",", "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<\!\(\*SubscriptBox[\(C\), \(1\)]\)\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<(\>\"", "]"}], ",", 
+                 "\"\<\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(A\)] + \
+\*SubscriptBox[\(x\), \(B\)]\), \
+\(2\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(A\)] + \
+\*SubscriptBox[\(y\), \(B\)]\), \(2\)]\)\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<)\>\"", "]"}], ",", 
+                 "\"\< = \>\"", ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<\!\(\*SubscriptBox[\(C\), \(1\)]\)(\>\"", ",", 
+                   "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"aa", "+", "cc"}], "2"], ",", "Blue"}], "]"}], 
+                 ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<,\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"bb", "+", "dd"}], "2"], ",", "Blue"}], "]"}], 
+                 ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<)\>\"", ",", "Blue"}], "]"}]}], "}"}], 
+               "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<\!\(\*SubscriptBox[\(B\), \(1\)]\)\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<(\>\"", "]"}], ",", 
+                 "\"\<\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(A\)] + \
+\*SubscriptBox[\(x\), \(C\)]\), \
+\(2\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(A\)] + \
+\*SubscriptBox[\(y\), \(C\)]\), \(2\)]\)\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<)\>\"", "]"}], ",", 
+                 "\"\< = \>\"", ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<\!\(\*SubscriptBox[\(B\), \(1\)]\)(\>\"", ",", 
+                   "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"aa", "+", "ee"}], "2"], ",", "Blue"}], "]"}], 
+                 ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<,\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"bb", "+", "ff"}], "2"], ",", "Blue"}], "]"}], 
+                 ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<)\>\"", ",", "Blue"}], "]"}]}], "}"}], 
+               "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<\!\(\*SubscriptBox[\(A\), \(1\)]\)\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<(\>\"", "]"}], ",", 
+                 "\"\<\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(B\)] + \
+\*SubscriptBox[\(x\), \(C\)]\), \
+\(2\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(B\)] + \
+\*SubscriptBox[\(y\), \(C\)]\), \(2\)]\)\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<)\>\"", "]"}], ",", 
+                 "\"\< = \>\"", ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                  "\"\<\!\(\*SubscriptBox[\(A\), \(1\)]\)(\>\"", ",", 
+                   "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"cc", "+", "ee"}], "2"], ",", "Blue"}], "]"}], 
+                 ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<,\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"dd", "+", "ff"}], "2"], ",", "Blue"}], "]"}], 
+                 ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<)\>\"", ",", "Blue"}], "]"}]}], "}"}], 
+               "]"}]}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Te\[ZHacek]i\[SHacek]te trougla:\>\"", ",", "Bold", ",",
+                   "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"\"\<T\>\"", ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<(\>\"", "]"}], ",", 
+                 "\"\<\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(A\)] + \
+\*SubscriptBox[\(x\), \(B\)] + \*SubscriptBox[\(x\), \(C\)]\), \
+\(3\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(A\)] + \
+\*SubscriptBox[\(y\), \(B\)] + \*SubscriptBox[\(y\), \(C\)]\), \(3\)]\)\>\"", 
+                 ",", " ", 
+                 RowBox[{"RawBoxes", "[", "\"\<)\>\"", "]"}], ",", 
+                 "\"\< = \>\"", ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<T(\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"aa", "+", "cc", "+", "ee"}], "2"], ",", "Blue"}],
+                   "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<,\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   FractionBox[
+                    RowBox[{"bb", "+", "dd", "+", "ff"}], "2"], ",", "Blue"}],
+                   "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<)\>\"", ",", "Blue"}], "]"}]}], "}"}], 
+               "]"}]}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Jedna\[CHacek]ina prave kroz ta\[CHacek]ke A i B:\>\"", 
+                  ",", "Bold", ",", "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<y-\!\(\*SubscriptBox[\(y\), \
+\(B\)]\)=\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(B\)] - \
+\*SubscriptBox[\(y\), \(A\)]\), \(\*SubscriptBox[\(x\), \(B\)] - \
+\*SubscriptBox[\(x\), \(A\)]\)]\)(x-\!\(\*SubscriptBox[\(x\), \(B\)]\))\
+\[DoubleRightArrow]\>\"", " ", ",", " ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<y=\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{"Expand", "[", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"dd", "-", "bb"}], 
+                    RowBox[{"cc", "-", "aa"}]], 
+                    RowBox[{"(", 
+                    RowBox[{"x", "-", "cc"}], ")"}]}], " ", "+", "dd"}], 
+                    "]"}], ",", "Blue"}], "]"}]}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Jedna\[CHacek]ina prave kroz ta\[CHacek]ke A i C:\>\"", 
+                  ",", "Bold", ",", "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<y-\!\(\*SubscriptBox[\(y\), \
+\(C\)]\)=\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(C\)] - \
+\*SubscriptBox[\(y\), \(A\)]\), \(\*SubscriptBox[\(x\), \(C\)] - \
+\*SubscriptBox[\(x\), \(A\)]\)]\)(x-\!\(\*SubscriptBox[\(x\), \(C\)]\))\
+\[DoubleRightArrow]\>\"", " ", ",", 
+                 RowBox[{"Style", "[", " ", 
+                  RowBox[{"\"\<y=\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{"Expand", "[", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"ff", "-", "bb"}], 
+                    RowBox[{"ee", "-", "aa"}]], 
+                    RowBox[{"(", 
+                    RowBox[{"x", "-", "ee"}], ")"}]}], " ", "+", "ff"}], 
+                    "]"}], ",", "Blue"}], "]"}]}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                 "\"\<Jedna\[CHacek]ina prave kroz ta\[CHacek]ke B i C:\>\"", 
+                  ",", "Bold", ",", "13"}], "]"}], "}"}], "]"}]}]}], ",", 
+            RowBox[{"Text", "@", 
+             RowBox[{"TraditionalForm", "@", 
+              RowBox[{"Row", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                "\"\<y-\!\(\*SubscriptBox[\(y\), \
+\(C\)]\)=\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(C\)] - \
+\*SubscriptBox[\(y\), \(B\)]\), \(\*SubscriptBox[\(x\), \(C\)] - \
+\*SubscriptBox[\(x\), \(B\)]\)]\)(x-\!\(\*SubscriptBox[\(x\), \(C\)]\))\
+\[DoubleRightArrow]\>\"", " ", ",", " ", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<y=\>\"", ",", "Blue"}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{"Expand", "[", 
+                    RowBox[{
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"ff", "-", "dd"}], 
+                    RowBox[{"ee", "-", "cc"}]], 
+                    RowBox[{"(", 
+                    RowBox[{"x", "-", "ee"}], ")"}]}], " ", "+", "ff"}], 
+                    "]"}], ",", "Blue"}], "]"}]}], "}"}], "]"}]}]}]}], "}"}], 
+          "]"}]}], "\[IndentingNewLine]", "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"700", ",", "530"}], "}"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showderivs", ",", 
+       RowBox[{"{", "}"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<Prikazati te\[ZHacek]i\[SHacek]nicu: \>\"", ",", "Bold", ",", 
+         "13"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"tline", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\< \!\(\*SubscriptBox[\(t\), \(a\)]\) \>\"", ",", " ", "Blue", 
+          ",", "Bold", ",", "13"}], "]"}]}], ",", 
+       RowBox[{"nline", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\< \!\(\*SubscriptBox[\(t\), \(b\)]\) \>\"", ",", "Red", ",", 
+          "Bold", ",", "13"}], "]"}]}], ",", 
+       RowBox[{"kline", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\< \!\(\*SubscriptBox[\(t\), \(c\)]\) \>\"", ",", "Black", ",", 
+          "Bold", ",", "13"}], "]"}]}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "CheckboxBar"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Top"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p1", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "7.21"}], ",", 
+         RowBox[{"-", "5.31"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "8"}], ",", 
+       RowBox[{"-", "8"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}], ",", "Locator"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p2", ",", 
+       RowBox[{"{", 
+        RowBox[{"4.12", ",", "0.23"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "8"}], ",", 
+       RowBox[{"-", "8"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}], ",", "Locator"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p3", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2.27"}], ",", "2.85"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "8"}], ",", 
+       RowBox[{"-", "8"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8", ",", "8"}], "}"}], ",", "Locator"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"TrackedSymbols", "->", 
+    RowBox[{"{", 
+     RowBox[{"p1", ",", "p2", ",", "p3", ",", "showderivs"}], "}"}]}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.435600861580474*^9, {3.819894660458454*^9, 
+   3.819894689321478*^9}, {3.8198948329866996`*^9, 3.8198948402645736`*^9}, {
+   3.819895085980714*^9, 3.81989515860882*^9}, {3.8198954301937103`*^9, 
+   3.819895455906249*^9}, {3.819895499382464*^9, 3.819895601563961*^9}, {
+   3.819895632148816*^9, 3.8198956719997225`*^9}, {3.819895772456002*^9, 
+   3.8198957974815893`*^9}, {3.8198958350307865`*^9, 3.819895836148988*^9}, {
+   3.819897359524805*^9, 3.8198973762760286`*^9}, {3.8198974085132184`*^9, 
+   3.8198976670818796`*^9}, {3.8198977982594585`*^9, 3.819897838910075*^9}, {
+   3.8198978756039605`*^9, 3.819898004873251*^9}, {3.819898040059766*^9, 
+   3.8198980509504857`*^9}, {3.8198981246408973`*^9, 
+   3.8198981550415263`*^9}, {3.819898185240899*^9, 3.819898324557034*^9}, {
+   3.819898466131855*^9, 3.8198985996837425`*^9}, {3.8198986614281635`*^9, 
+   3.819898715817121*^9}, {3.8198987715789776`*^9, 3.8198987980517445`*^9}, {
+   3.819898861531703*^9, 3.819898879643515*^9}, {3.819898978402014*^9, 
+   3.8198991747115517`*^9}, {3.819899218175503*^9, 3.819899253646376*^9}, {
+   3.819899284607767*^9, 3.819899378484543*^9}, {3.819899438392191*^9, 
+   3.8198995520547295`*^9}, {3.8198995824033175`*^9, 3.819899608637461*^9}, {
+   3.819899677830246*^9, 3.8198996909869237`*^9}, {3.8198997661675158`*^9, 
+   3.819899782012044*^9}, {3.8198998184518714`*^9, 3.8198998241078987`*^9}, {
+   3.8198999844288187`*^9, 3.81990004494377*^9}, {3.819900086382733*^9, 
+   3.819900163398734*^9}, {3.8199002026012344`*^9, 3.819900325733014*^9}, {
+   3.819900395943824*^9, 3.8199004471589856`*^9}, {3.819944582211011*^9, 
+   3.8199449522173557`*^9}, {3.819945456293878*^9, 3.8199454571712317`*^9}, {
+   3.819945501059003*^9, 3.8199455080395365`*^9}, {3.819945564261013*^9, 
+   3.8199455665758753`*^9}, {3.8199456019295664`*^9, 
+   3.8199456109797497`*^9}, {3.819945664921218*^9, 3.819945730113632*^9}, {
+   3.8199457959995246`*^9, 3.8199458255518646`*^9}, {3.819945860636151*^9, 
+   3.819945963059126*^9}, {3.819946012084855*^9, 3.819946021959733*^9}, {
+   3.8199460579323354`*^9, 3.819946135958283*^9}, {3.819946240983469*^9, 
+   3.8199462459585176`*^9}, {3.819948813772767*^9, 3.8199488900283117`*^9}, {
+   3.819948954287595*^9, 3.819949215872879*^9}, {3.819949308068697*^9, 
+   3.819949369379424*^9}, {3.819949436279436*^9, 3.8199494585615025`*^9}, {
+   3.8199495338661776`*^9, 3.8199495423854475`*^9}, {3.8199495919906654`*^9, 
+   3.819949600443837*^9}, {3.8199514244047623`*^9, 3.8199514383596315`*^9}, {
+   3.8199531792129145`*^9, 3.8199532064013376`*^9}, {3.819953242576306*^9, 
+   3.8199532540568624`*^9}, {3.8199533259357653`*^9, 
+   3.8199533748248825`*^9}, {3.8199534293302536`*^9, 3.819953440560235*^9}, {
+   3.819953509789673*^9, 3.81995356192782*^9}, {3.819953629391552*^9, 
+   3.8199536676096597`*^9}, {3.8199537025669937`*^9, 3.819953705850021*^9}, {
+   3.81996103773055*^9, 3.819961082648017*^9}, {3.819961136592972*^9, 
+   3.819961242507553*^9}, {3.819961282640156*^9, 3.8199612891273236`*^9}, {
+   3.8199613501189213`*^9, 3.8199613676421876`*^9}, {3.819961397980236*^9, 
+   3.819961398937872*^9}, {3.8199625543425245`*^9, 3.8199626488348694`*^9}, {
+   3.819962686981044*^9, 3.8199627239815454`*^9}, {3.819963078580227*^9, 
+   3.8199631072837095`*^9}, {3.819963139141943*^9, 3.819963292339969*^9}, {
+   3.819963330733692*^9, 3.819963367290839*^9}, {3.819963587007765*^9, 
+   3.819963615505104*^9}, {3.8199636633132744`*^9, 3.8199638111432076`*^9}, {
+   3.8199638416375723`*^9, 3.8199638598045893`*^9}, {3.819963942638377*^9, 
+   3.8199639531091814`*^9}, {3.819963984040699*^9, 3.8199639842125854`*^9}, {
+   3.8199640877640333`*^9, 3.8199641270135603`*^9}, {3.8199641781730833`*^9, 
+   3.819964192015103*^9}, {3.8199642819791975`*^9, 3.8199643355893865`*^9}, {
+   3.8199643811014156`*^9, 3.8199643941273923`*^9}, {3.8199644310915937`*^9, 
+   3.8199644317590013`*^9}, {3.8199645442529154`*^9, 3.819964585868804*^9}, {
+   3.819964716774061*^9, 3.81996476009239*^9}, {3.819964795687499*^9, 
+   3.819964824002589*^9}, {3.8199648817792845`*^9, 3.819964907010237*^9}, {
+   3.819964965792265*^9, 3.8199649917250977`*^9}, {3.8199650335434847`*^9, 
+   3.819965080650291*^9}, {3.819965162478842*^9, 3.819965177641717*^9}, {
+   3.819967340820548*^9, 3.819967366971134*^9}, {3.8199674226607738`*^9, 
+   3.8199674243253393`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`p1$$ = {-7.21, -5.31}, $CellContext`p2$$ = {
+    4.12, 0.23}, $CellContext`p3$$ = {-4.48, 
+    7.280000000000001}, $CellContext`showderivs$$ = {$CellContext`tline, \
+$CellContext`nline, $CellContext`kline}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`showderivs$$], {}, 
+       Style[
+       "Prikazati te\[ZHacek]i\[SHacek]nicu: ", Bold, 
+        13]}, {$CellContext`tline -> 
+       Style[" \!\(\*SubscriptBox[\(t\), \(a\)]\) ", 
+         RGBColor[0, 0, 1], Bold, 13], $CellContext`nline -> 
+       Style[" \!\(\*SubscriptBox[\(t\), \(b\)]\) ", 
+         RGBColor[1, 0, 0], Bold, 13], $CellContext`kline -> 
+       Style[" \!\(\*SubscriptBox[\(t\), \(c\)]\) ", 
+         GrayLevel[0], Bold, 13]}}, {{
+       Hold[$CellContext`p1$$], {-7.21, -5.31}}, {-8, -8}, {8, 8}}, {{
+       Hold[$CellContext`p2$$], {4.12, 0.23}}, {-8, -8}, {8, 8}}, {{
+       Hold[$CellContext`p3$$], {-2.27, 2.85}}, {-8, -8}, {8, 8}}}, 
+    Typeset`size$$ = {700., {262., 268.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`showderivs$1317$$ = False, $CellContext`p1$1318$$ = {0,
+     0}, $CellContext`p2$1319$$ = {0, 0}, $CellContext`p3$1320$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`p1$$ = {-7.21, -5.31}, $CellContext`p2$$ = \
+{4.12, 0.23}, $CellContext`p3$$ = {-2.27, 
+         2.85}, $CellContext`showderivs$$ = {}}, "ControllerVariables" :> {
+        Hold[$CellContext`showderivs$$, $CellContext`showderivs$1317$$, 
+         False], 
+        Hold[$CellContext`p1$$, $CellContext`p1$1318$$, {0, 0}], 
+        Hold[$CellContext`p2$$, $CellContext`p2$1319$$, {0, 0}], 
+        Hold[$CellContext`p3$$, $CellContext`p3$1320$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ({$CellContext`aa, $CellContext`bb} = $CellContext`p1$$; \
+{$CellContext`cc, $CellContext`dd} = $CellContext`p2$$; {$CellContext`ee, \
+$CellContext`ff} = $CellContext`p3$$; $CellContext`tline[
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`p3, 
+           Blank[]]] := Graphics[{Blue, 
+           
+           Line[{$CellContext`p1, ($CellContext`p3 + $CellContext`p2)/
+             2}]}]; $CellContext`nline[
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`p3, 
+           Blank[]]] := Graphics[{Red, 
+           
+           Line[{$CellContext`p2, ($CellContext`p1 + $CellContext`p3)/
+             2}]}]; $CellContext`kline[
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]], 
+          Pattern[$CellContext`p3, 
+           Blank[]]] := Graphics[{Black, 
+           Line[{$CellContext`p3, ($CellContext`p1 + $CellContext`p2)/2}]}]; 
+       Pane[
+         Row[{
+           Labeled[
+            Show[
+             Graphics[{{
+                Opacity[0.3], 
+                Lighter[
+                 RGBColor[0, 0, 1]], 
+                
+                Polygon[{$CellContext`p1$$, $CellContext`p2$$, \
+$CellContext`p3$$}]}, Black, 
+               Text[
+                Row[{
+                  Style["A(", Blue, 12], 
+                  Style[$CellContext`aa, Blue, 12], 
+                  Style[", ", Blue, 12], 
+                  Style[$CellContext`bb, Blue, 12], 
+                  Style[")", Blue, 12]}], $CellContext`p1$$ - {0, 0.75}], 
+               Text[
+                Row[{
+                  Style["B(", Blue], 
+                  Style[$CellContext`cc, Blue], 
+                  Style[", ", Blue], 
+                  Style[$CellContext`dd, Blue], 
+                  Style[")", Blue]}], $CellContext`p2$$ + {0, 0.75}], 
+               Text[
+                Row[{
+                  Style["C(", Blue], 
+                  Style[$CellContext`ee, Blue], 
+                  Style[", ", Blue], 
+                  Style[$CellContext`ff, Blue], 
+                  Style[")", Blue]}], $CellContext`p3$$ + {0, 0.75}], 
+               Text[
+                Row[{
+                  Style[
+                  "\!\(\*SubscriptBox[\(C\), \(1\)]\)", 
+                   Blue]}], {($CellContext`aa + $CellContext`cc)/
+                  2, ($CellContext`bb + $CellContext`dd)/2} - {0, 0.75}], 
+               Text[
+                Row[{
+                  Style[
+                  "\!\(\*SubscriptBox[\(B\), \(1\)]\)", 
+                   Blue]}], {($CellContext`aa + $CellContext`ee)/
+                  2, ($CellContext`bb + $CellContext`ff)/2} + {0, 0.75}], 
+               Text[
+                Row[{
+                  Style[
+                  "\!\(\*SubscriptBox[\(A\), \(1\)]\)", 
+                   Blue]}], {($CellContext`ee + $CellContext`cc)/
+                  2, ($CellContext`ff + $CellContext`dd)/2} + {0, 0.75}], 
+               Text[
+                Row[{
+                  Style[
+                  "T", Blue]}], {($CellContext`ee + $CellContext`cc + \
+$CellContext`aa)/3, ($CellContext`ff + $CellContext`dd + $CellContext`bb)/
+                  3} + {0, 0.75}]}, PlotRange -> 9, Frame -> True, GridLines -> 
+              Automatic, FrameStyle -> Directive[Black, 20], 
+              ImageSize -> {400, 350}], 
+             Through[
+              $CellContext`showderivs$$[$CellContext`p1$$, $CellContext`p2$$, \
+$CellContext`p3$$]], 
+             Graphics[{
+               PointSize[Large], 
+               
+               Point[{($CellContext`aa + $CellContext`cc)/
+                 2, ($CellContext`bb + $CellContext`dd)/2}]}], 
+             Graphics[{
+               PointSize[Large], 
+               
+               Point[{($CellContext`aa + $CellContext`ee)/
+                 2, ($CellContext`bb + $CellContext`ff)/2}]}], 
+             Graphics[{
+               PointSize[Large], 
+               
+               Point[{($CellContext`cc + $CellContext`ee)/
+                 2, ($CellContext`dd + $CellContext`ff)/2}]}], 
+             Graphics[{
+               PointSize[Large], 
+               
+               Point[{($CellContext`aa + $CellContext`cc + $CellContext`ee)/
+                 3, ($CellContext`bb + $CellContext`dd + $CellContext`ff)/
+                 3}]}]], 
+            Style["Autor: Amela Crnki\[CAcute], prof.", Bold]], 
+           Column[{
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style["Du\[ZHacek]ine stranica trougla:", Bold, 13]}]]], 
+             Text[
+              TraditionalForm[
+               
+               Row[{"d(A,B)", " = ", 
+                 "\!\(\*SqrtBox[\(\*SuperscriptBox[\((\*SubscriptBox[\(x\), \
+\(B\)] - \*SubscriptBox[\(x\), \(A\)])\), \(2\)] + \
+\*SuperscriptBox[\((\*SubscriptBox[\(y\), \(B\)] - \*SubscriptBox[\(y\), \
+\(A\)])\), \(2\)]\)]\) ", " = ", 
+                 Style[
+                  
+                  Sqrt[($CellContext`cc - $CellContext`aa)^2 + \
+($CellContext`dd - $CellContext`bb)^2], Blue]}]]], 
+             Text[
+              TraditionalForm[
+               
+               Row[{"d(A,C)", " = ", 
+                 "\!\(\*SqrtBox[\(\*SuperscriptBox[\((\*SubscriptBox[\(x\), \
+\(C\)] - \*SubscriptBox[\(x\), \(A\)])\), \(2\)] + \
+\*SuperscriptBox[\((\*SubscriptBox[\(y\), \(C\)] - \*SubscriptBox[\(y\), \
+\(A\)])\), \(2\)]\)]\) ", " = ", 
+                 Style[
+                  
+                  Sqrt[($CellContext`ee - $CellContext`aa)^2 + \
+($CellContext`ff - $CellContext`bb)^2], Blue]}]]], 
+             Text[
+              TraditionalForm[
+               
+               Row[{"d(B,C)", " = ", 
+                 "\!\(\*SqrtBox[\(\*SuperscriptBox[\((\*SubscriptBox[\(x\), \
+\(C\)] - \*SubscriptBox[\(x\), \(B\)])\), \(2\)] + \
+\*SuperscriptBox[\((\*SubscriptBox[\(y\), \(C\)] - \*SubscriptBox[\(y\), \
+\(B\)])\), \(2\)]\)]\) ", " = ", 
+                 Style[
+                  
+                  Sqrt[($CellContext`ee - $CellContext`cc)^2 + \
+($CellContext`ff - $CellContext`dd)^2], Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style["Povr\[SHacek]ina trougla:", Bold, 13]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{"P", " = ", 1/2, 
+                 RawBoxes["|"], 
+                 "\!\(\*GridBox[{\n  {GridBox[{\n     {GridBox[{\n        \
+{GridBox[{\n           {SubscriptBox[\"x\", \"A\"]},\n           \
+{SubscriptBox[\"x\", \"B\"]}\n          }]},\n        {SubscriptBox[\"x\", \
+\"C\"]}\n       }], GridBox[{\n        {GridBox[{\n           \
+{SubscriptBox[\"y\", \"A\"]},\n           {SubscriptBox[\"y\", \"B\"]}\n      \
+    }]},\n        {SubscriptBox[\"y\", \"C\"]}\n       }]}\n    }], GridBox[{\
+\n     {GridBox[{\n        {1},\n        {1}\n       }]},\n     {1}\n    }]}\n\
+ }]\)", 
+                 RawBoxes["|"], " = ", 
+                 Style[
+                 0.5 Det[{{$CellContext`aa, $CellContext`bb, 
+                    1}, {$CellContext`cc, $CellContext`dd, 
+                    1}, {$CellContext`ee, $CellContext`ff, 1}}], Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style["Sredi\[SHacek]ta stranica trougla:", Bold, 13]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{"\!\(\*SubscriptBox[\(C\), \(1\)]\)", 
+                 RawBoxes["("], 
+                 "\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(A\)] + \
+\*SubscriptBox[\(x\), \(B\)]\), \
+\(2\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(A\)] + \
+\*SubscriptBox[\(y\), \(B\)]\), \(2\)]\)", 
+                 RawBoxes[")"], " = ", 
+                 Style["\!\(\*SubscriptBox[\(C\), \(1\)]\)(", Blue], 
+                 Style[($CellContext`aa + $CellContext`cc)/2, Blue], 
+                 Style[",", Blue], 
+                 Style[($CellContext`bb + $CellContext`dd)/2, Blue], 
+                 Style[")", Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{"\!\(\*SubscriptBox[\(B\), \(1\)]\)", 
+                 RawBoxes["("], 
+                 "\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(A\)] + \
+\*SubscriptBox[\(x\), \(C\)]\), \
+\(2\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(A\)] + \
+\*SubscriptBox[\(y\), \(C\)]\), \(2\)]\)", 
+                 RawBoxes[")"], " = ", 
+                 Style["\!\(\*SubscriptBox[\(B\), \(1\)]\)(", Blue], 
+                 Style[($CellContext`aa + $CellContext`ee)/2, Blue], 
+                 Style[",", Blue], 
+                 Style[($CellContext`bb + $CellContext`ff)/2, Blue], 
+                 Style[")", Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{"\!\(\*SubscriptBox[\(A\), \(1\)]\)", 
+                 RawBoxes["("], 
+                 "\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(B\)] + \
+\*SubscriptBox[\(x\), \(C\)]\), \
+\(2\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(B\)] + \
+\*SubscriptBox[\(y\), \(C\)]\), \(2\)]\)", 
+                 RawBoxes[")"], " = ", 
+                 Style["\!\(\*SubscriptBox[\(A\), \(1\)]\)(", Blue], 
+                 Style[($CellContext`cc + $CellContext`ee)/2, Blue], 
+                 Style[",", Blue], 
+                 Style[($CellContext`dd + $CellContext`ff)/2, Blue], 
+                 Style[")", Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style["Te\[ZHacek]i\[SHacek]te trougla:", Bold, 13]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{"T", 
+                 RawBoxes["("], 
+                 "\!\(\*FractionBox[\(\*SubscriptBox[\(x\), \(A\)] + \
+\*SubscriptBox[\(x\), \(B\)] + \*SubscriptBox[\(x\), \(C\)]\), \
+\(3\)]\),\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(A\)] + \
+\*SubscriptBox[\(y\), \(B\)] + \*SubscriptBox[\(y\), \(C\)]\), \(3\)]\)", 
+                 RawBoxes[")"], " = ", 
+                 Style["T(", Blue], 
+                 
+                 Style[($CellContext`aa + $CellContext`cc + $CellContext`ee)/
+                  2, Blue], 
+                 Style[",", Blue], 
+                 
+                 Style[($CellContext`bb + $CellContext`dd + $CellContext`ff)/
+                  2, Blue], 
+                 Style[")", Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style[
+                 "Jedna\[CHacek]ina prave kroz ta\[CHacek]ke A i B:", Bold, 
+                  13]}]]], 
+             Text[
+              TraditionalForm[
+               
+               Row[{"y-\!\(\*SubscriptBox[\(y\), \
+\(B\)]\)=\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(B\)] - \
+\*SubscriptBox[\(y\), \(A\)]\), \(\*SubscriptBox[\(x\), \(B\)] - \
+\*SubscriptBox[\(x\), \(A\)]\)]\)(x-\!\(\*SubscriptBox[\(x\), \(B\)]\))\
+\[DoubleRightArrow]", 
+                 Style["y=", Blue], 
+                 Style[
+                  
+                  Expand[(($CellContext`dd - \
+$CellContext`bb)/($CellContext`cc - $CellContext`aa)) ($CellContext`x - \
+$CellContext`cc) + $CellContext`dd], Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style[
+                 "Jedna\[CHacek]ina prave kroz ta\[CHacek]ke A i C:", Bold, 
+                  13]}]]], 
+             Text[
+              TraditionalForm[
+               
+               Row[{"y-\!\(\*SubscriptBox[\(y\), \
+\(C\)]\)=\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(C\)] - \
+\*SubscriptBox[\(y\), \(A\)]\), \(\*SubscriptBox[\(x\), \(C\)] - \
+\*SubscriptBox[\(x\), \(A\)]\)]\)(x-\!\(\*SubscriptBox[\(x\), \(C\)]\))\
+\[DoubleRightArrow]", 
+                 Style["y=", Blue], 
+                 Style[
+                  
+                  Expand[(($CellContext`ff - \
+$CellContext`bb)/($CellContext`ee - $CellContext`aa)) ($CellContext`x - \
+$CellContext`ee) + $CellContext`ff], Blue]}]]], 
+             Text[
+              TraditionalForm[
+               Row[{
+                 Style[
+                 "Jedna\[CHacek]ina prave kroz ta\[CHacek]ke B i C:", Bold, 
+                  13]}]]], 
+             Text[
+              TraditionalForm[
+               
+               Row[{"y-\!\(\*SubscriptBox[\(y\), \
+\(C\)]\)=\!\(\*FractionBox[\(\*SubscriptBox[\(y\), \(C\)] - \
+\*SubscriptBox[\(y\), \(B\)]\), \(\*SubscriptBox[\(x\), \(C\)] - \
+\*SubscriptBox[\(x\), \(B\)]\)]\)(x-\!\(\*SubscriptBox[\(x\), \(C\)]\))\
+\[DoubleRightArrow]", 
+                 Style["y=", Blue], 
+                 Style[
+                  
+                  Expand[(($CellContext`ff - \
+$CellContext`dd)/($CellContext`ee - $CellContext`cc)) ($CellContext`x - \
+$CellContext`ee) + $CellContext`ff], Blue]}]]]}]}], ImageSize -> {700, 530}]),
+       "Specifications" :> {{{$CellContext`showderivs$$, {}, 
+          Style[
+          "Prikazati te\[ZHacek]i\[SHacek]nicu: ", Bold, 
+           13]}, {$CellContext`tline -> 
+          Style[" \!\(\*SubscriptBox[\(t\), \(a\)]\) ", 
+            RGBColor[0, 0, 1], Bold, 13], $CellContext`nline -> 
+          Style[" \!\(\*SubscriptBox[\(t\), \(b\)]\) ", 
+            RGBColor[1, 0, 0], Bold, 13], $CellContext`kline -> 
+          Style[" \!\(\*SubscriptBox[\(t\), \(c\)]\) ", 
+            GrayLevel[0], Bold, 13]}, ControlType -> CheckboxBar, 
+         ControlPlacement -> 
+         Top}, {{$CellContext`p1$$, {-7.21, -5.31}}, {-8, -8}, {8, 8}, 
+         ControlType -> 
+         Locator}, {{$CellContext`p2$$, {4.12, 0.23}}, {-8, -8}, {8, 8}, 
+         ControlType -> 
+         Locator}, {{$CellContext`p3$$, {-2.27, 2.85}}, {-8, -8}, {8, 8}, 
+         ControlType -> Locator}}, 
+      "Options" :> {
+       TrackedSymbols -> {$CellContext`p1$$, $CellContext`p2$$, \
+$CellContext`p3$$, $CellContext`showderivs$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{757., {308., 314.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.8203429730945263`*^9, 3.8203429893071947`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1280, 637},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 36118, 820, 1807, "Input"],
+Cell[36701, 844, 16583, 374, 639, "Output"]
+}, Open  ]]
+}
+]
+*)
+

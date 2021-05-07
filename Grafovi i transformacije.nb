@@ -1,0 +1,634 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27108,        626]
+NotebookOptionsPosition[     26789,        610]
+NotebookOutlinePosition[     27131,        625]
+CellTagsIndexPosition[     27088,        622]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"granica", "=", "2.8"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Labeled", "[", 
+    RowBox[{
+     RowBox[{"Show", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Plot", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"c", "*", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], ")"}], "^", "2"}]}], 
+                "+", "d"}], ",", 
+               RowBox[{
+                RowBox[{"c", "*", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], ")"}], "^", "3"}]}], 
+                "+", "d"}], ",", 
+               RowBox[{
+                RowBox[{"c", "*", 
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{
+                   RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", "d"}], 
+               ",", 
+               RowBox[{
+                RowBox[{"c", "*", 
+                 RowBox[{"Abs", "[", 
+                  RowBox[{
+                   RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", "d"}], 
+               ",", 
+               RowBox[{
+                RowBox[{"c", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{
+                   RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", "d"}], 
+               ",", 
+               RowBox[{
+                RowBox[{"c", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{
+                   RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", "d"}]}],
+               "}"}], "[", 
+             RowBox[{"[", "zoo", "]"}], "]"}], ",", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"a", "\[GreaterEqual]", "0"}], ",", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"b", "\[GreaterEqual]", "0"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x", ",", 
+                  RowBox[{
+                   RowBox[{"-", "granica"}], "-", "b"}], ",", 
+                  RowBox[{"granica", "-", "b"}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x", ",", 
+                  RowBox[{
+                   RowBox[{"-", "granica"}], "-", "b"}], ",", 
+                  RowBox[{"granica", "-", "b"}]}], "}"}]}], "]"}], ",", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"b", "\[GreaterEqual]", "0"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x", ",", 
+                  RowBox[{
+                   RowBox[{"-", "granica"}], "+", "b"}], ",", 
+                  RowBox[{"granica", "+", "b"}]}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x", ",", 
+                  RowBox[{
+                   RowBox[{"-", "granica"}], "+", "b"}], ",", 
+                  RowBox[{"granica", "+", "b"}]}], "}"}]}], "]"}]}], "]"}], 
+            ",", 
+            RowBox[{"PlotStyle", "\[Rule]", 
+             RowBox[{"Directive", "[", 
+              RowBox[{"Red", ",", "Thick"}], "]"}]}], ",", 
+            RowBox[{"PlotLabel", "\[Rule]", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Column", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\"\<F(x) = c*f(a*x+b)+d\>\"", "}"}], "]"}], 
+                    ",", "20", ",", "Black"}], "]"}], ",", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\< F(x)= \>\"", ",", 
+                    RowBox[{
+                    RowBox[{"c", "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], ")"}], "^", "2"}]}], 
+                    "+", "d"}]}], "}"}], "]"}], ",", "20", ",", "Red"}], 
+                    "]"}], ",", 
+                   RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}], ",", 
+                RowBox[{"Column", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\"\<F(x) = c*f(a*x+b)+d\>\"", "}"}], "]"}], 
+                    ",", "20", ",", "Black"}], "]"}], ",", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\< F(x)= \>\"", ",", 
+                    RowBox[{
+                    RowBox[{"c", "*", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], ")"}], "^", "3"}]}], 
+                    "+", "d"}]}], "}"}], "]"}], ",", "20", ",", "Red"}], 
+                    "]"}], ",", 
+                   RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}], ",", 
+                RowBox[{"Column", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\"\<F(x) = c*f(a*x+b)+d\>\"", "}"}], "]"}], 
+                    ",", "20", ",", "Black"}], "]"}], ",", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\< F(x)= \>\"", ",", 
+                    RowBox[{
+                    RowBox[{"c", "*", 
+                    RowBox[{"Sqrt", "[", 
+                    RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", 
+                    "d"}]}], "}"}], "]"}], ",", "20", ",", "Red"}], "]"}], 
+                   ",", 
+                   RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}], ",", 
+                RowBox[{"Column", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\"\<F(x) = c*f(a*x+b)+d\>\"", "}"}], "]"}], 
+                    ",", "20", ",", "Black"}], "]"}], ",", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<F(x) = \>\"", ",", 
+                    RowBox[{
+                    RowBox[{"c", "*", 
+                    RowBox[{"Abs", "[", 
+                    RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", 
+                    "d"}]}], "}"}], "]"}], ",", "20", ",", "Red"}], "]"}], 
+                   ",", 
+                   RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}], ",", 
+                RowBox[{"Column", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\"\<F(x) = c*f(a*x+b)+d\>\"", "}"}], "]"}], 
+                    ",", "20", ",", "Black"}], "]"}], ",", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<F(x) = \>\"", ",", 
+                    RowBox[{
+                    RowBox[{"c", "*", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", 
+                    "d"}]}], "}"}], "]"}], ",", "20", ",", "Red"}], "]"}], 
+                   ",", 
+                   RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}], ",", 
+                RowBox[{"Column", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", "\"\<F(x) = c*f(a*x+b)+d\>\"", "}"}], "]"}], 
+                    ",", "20", ",", "Black"}], "]"}], ",", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<F(x) = \>\"", ",", 
+                    RowBox[{
+                    RowBox[{"c", "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{
+                    RowBox[{"a", "*", "x"}], "+", "b"}], "]"}]}], "+", 
+                    "d"}]}], "}"}], "]"}], ",", "20", ",", "Red"}], "]"}], 
+                   ",", 
+                   RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}]}], 
+               "}"}], "[", 
+              RowBox[{"[", "zoo", "]"}], "]"}]}]}], "]"}], "/.", 
+          RowBox[{
+           RowBox[{"Line", "[", "x__", "]"}], "\[RuleDelayed]", 
+           RowBox[{"Sequence", "[", 
+            RowBox[{
+             RowBox[{"Arrowheads", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", ".04"}], ",", ".04"}], "}"}], "]"}], ",", 
+             RowBox[{"Arrow", "[", "x", "]"}]}], "]"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"Plot", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"x", "^", "2"}], ",", 
+               RowBox[{"x", "^", "3"}], ",", 
+               RowBox[{"Sqrt", "[", "x", "]"}], ",", 
+               RowBox[{"Abs", "[", "x", "]"}], ",", 
+               RowBox[{"Sin", "[", "x", "]"}], ",", 
+               RowBox[{"Cos", "[", "x", "]"}]}], "}"}], "[", 
+             RowBox[{"[", "zoo", "]"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"x", ",", 
+              RowBox[{"-", "granica"}], ",", "granica"}], "}"}], ",", 
+            RowBox[{"PlotStyle", "\[Rule]", 
+             RowBox[{"Directive", "[", 
+              RowBox[{"Blue", ",", "Thick"}], "]"}]}]}], "]"}], "/.", 
+          RowBox[{
+           RowBox[{"Line", "[", "x__", "]"}], "\[RuleDelayed]", 
+           RowBox[{"Sequence", "[", 
+            RowBox[{
+             RowBox[{"Arrowheads", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", ".04"}], ",", ".04"}], "}"}], "]"}], ",", 
+             RowBox[{"Arrow", "[", "x", "]"}]}], "]"}]}]}]}], "}"}], ",", 
+       RowBox[{"AxesOrigin", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "z"}], ",", "z"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "z"}], ",", "z"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+       RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+       RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+       RowBox[{"FrameStyle", "\[Rule]", 
+        RowBox[{"Directive", "[", 
+         RowBox[{"Black", ",", "25"}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"Style", "[", 
+      RowBox[{"\"\<Autor: Amela Crnki\[CAcute], prof.\>\"", ",", "Bold"}], 
+      "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<a=\>\"", ",", "20"}], "]"}]}], "}"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "3", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<b=\>\"", ",", "20"}], "]"}]}], "}"}], ",", 
+     RowBox[{"-", "50"}], ",", "50", ",", "0.5", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Open\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<c=\>\"", ",", "20"}], "]"}]}], "}"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "2", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Open\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", "2", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<d=\>\"", ",", "20"}], "]"}]}], "}"}], ",", 
+     RowBox[{"-", "50"}], ",", "50", ",", ".5", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Open\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", "7", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<Zoom\>\"", ",", "20"}], "]"}]}], "}"}], ",", 
+     RowBox[{"-", "100"}], ",", "100", ",", "0.5", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"zoo", ",", "1", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<  \>\"", ",", "20"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\<f(x)=\!\(\*SuperscriptBox[\(x\), \(2\)]\)   \>\"", ",", "20", 
+          ",", "Blue"}], "]"}]}], ",", 
+       RowBox[{"2", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\<f(x)=\!\(\*SuperscriptBox[\(x\), \(3\)]\)   \>\"", ",", "20", 
+          ",", "Blue"}], "]"}]}], ",", 
+       RowBox[{"3", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\<f(x)=\!\(\*SqrtBox[\(x\)]\)   \>\"", ",", "20", ",", "Blue"}], 
+         "]"}]}], ",", 
+       RowBox[{"4", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<f(x)=|x|   \>\"", ",", "20", ",", "Blue"}], "]"}]}], 
+       ",", 
+       RowBox[{"5", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<f(x)=sin(x) \>\"", ",", "20", ",", "Blue"}], "]"}]}], 
+       ",", 
+       RowBox[{"6", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<f(x)=cos(x) \>\"", ",", "20", ",", "Blue"}], "]"}]}]}], 
+      "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "100"}]}], "}"}], ",", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.809489182490003*^9, 3.8094891971461153`*^9}, {
+   3.809489228067812*^9, 3.809489370255931*^9}, 3.809489401638588*^9, {
+   3.8094894846294394`*^9, 3.80948949984405*^9}, 3.8094895370419874`*^9, {
+   3.8094899944160957`*^9, 3.809490039844635*^9}, {3.8094901070711126`*^9, 
+   3.8094901145120125`*^9}, {3.809490170686859*^9, 3.809490184136228*^9}, {
+   3.8094902585446453`*^9, 3.8094902865701976`*^9}, {3.8094903504477787`*^9, 
+   3.809490377219819*^9}, {3.8094904338331513`*^9, 3.8094904626951504`*^9}, 
+   3.8094904983883686`*^9, {3.809490621280451*^9, 3.809490621596964*^9}, {
+   3.8094907142106094`*^9, 3.809490768728302*^9}, {3.8094916881715803`*^9, 
+   3.8094917138043547`*^9}, {3.809491776977841*^9, 3.8094918357699256`*^9}, {
+   3.809491869580437*^9, 3.8094918907144012`*^9}, {3.8094919596148405`*^9, 
+   3.809491975936705*^9}, {3.8094924332532587`*^9, 3.809492461219241*^9}, {
+   3.809492509761816*^9, 3.809492544538871*^9}, {3.809492576269009*^9, 
+   3.8094926142172017`*^9}, {3.809492670641837*^9, 3.8094926975213957`*^9}, {
+   3.8094927320249977`*^9, 3.809492777667914*^9}, {3.809492819076641*^9, 
+   3.809492887590768*^9}, {3.809492926257597*^9, 3.809492987111419*^9}, {
+   3.809493468760704*^9, 3.809493575313324*^9}, {3.80949363175266*^9, 
+   3.8094936692938375`*^9}, {3.809493824504712*^9, 3.8094938374509816`*^9}, {
+   3.8094941701337113`*^9, 3.809494170984844*^9}, {3.8094945252818613`*^9, 
+   3.8094945483083925`*^9}, {3.809494596643239*^9, 3.809494648253564*^9}, {
+   3.809494687821237*^9, 3.8094947036620245`*^9}, {3.809494800802739*^9, 
+   3.8094948676601076`*^9}, {3.809494914796694*^9, 3.809494927663941*^9}, {
+   3.80949497874382*^9, 3.809495216129368*^9}, {3.8094952663381186`*^9, 
+   3.8094952727580414`*^9}, {3.809495318592326*^9, 3.8094953187555532`*^9}, {
+   3.8094953584921255`*^9, 3.809495360649006*^9}, {3.8094954479512377`*^9, 
+   3.809495459992971*^9}, {3.8094955000916047`*^9, 3.809495524117089*^9}, {
+   3.8094955546200376`*^9, 3.8094955581796074`*^9}, {3.809495929374344*^9, 
+   3.809495944666711*^9}, {3.809496177521636*^9, 3.8094963286839666`*^9}, {
+   3.8094964911858697`*^9, 3.809496500901121*^9}, {3.8094967197483563`*^9, 
+   3.80949673582145*^9}, {3.809497170457799*^9, 3.8094972082703648`*^9}, {
+   3.8094972459394355`*^9, 3.809497283180307*^9}, {3.8094973705323815`*^9, 
+   3.809497388046824*^9}, {3.809497439123056*^9, 3.809497440429402*^9}, {
+   3.809497638696398*^9, 3.8094976753688965`*^9}, {3.8094978955225186`*^9, 
+   3.809497897681752*^9}, 3.8094979328401756`*^9, {3.8094982303297777`*^9, 
+   3.809498232246358*^9}, {3.8094987147686634`*^9, 3.8094987403505573`*^9}, {
+   3.809499046901968*^9, 3.8094990531770973`*^9}, {3.811409932564514*^9, 
+   3.8114099759303255`*^9}, {3.8114100938331027`*^9, 3.811410101984084*^9}, {
+   3.819966842470961*^9, 3.819966870496739*^9}, {3.8199669529732943`*^9, 
+   3.819966959438672*^9}, {3.8203432311660357`*^9, 3.820343236355013*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`b$$ = 
+    3, $CellContext`c$$ = -1, $CellContext`d$$ = 2, $CellContext`z$$ = 
+    7, $CellContext`zoo$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1, 
+       Style["a=", 20]}, -1, 1, 2}, {{
+       Hold[$CellContext`b$$], 3, 
+       Style["b=", 20]}, -50, 50, 0.5}, {{
+       Hold[$CellContext`c$$], -1, 
+       Style["c=", 20]}, -1, 1, 2}, {{
+       Hold[$CellContext`d$$], 2, 
+       Style["d=", 20]}, -50, 50, 0.5}, {{
+       Hold[$CellContext`z$$], 7, 
+       Style["Zoom", 20]}, -100, 100, 0.5}, {{
+       Hold[$CellContext`zoo$$], 1, 
+       Style["  ", 20]}, {
+      1 -> Style["f(x)=\!\(\*SuperscriptBox[\(x\), \(2\)]\)   ", 20, 
+         RGBColor[0, 0, 1]], 2 -> 
+       Style["f(x)=\!\(\*SuperscriptBox[\(x\), \(3\)]\)   ", 20, 
+         RGBColor[0, 0, 1]], 3 -> Style["f(x)=\!\(\*SqrtBox[\(x\)]\)   ", 20, 
+         RGBColor[0, 0, 1]], 4 -> Style["f(x)=|x|   ", 20, 
+         RGBColor[0, 0, 1]], 5 -> Style["f(x)=sin(x) ", 20, 
+         RGBColor[0, 0, 1]], 6 -> Style["f(x)=cos(x) ", 20, 
+         RGBColor[0, 0, 1]]}}}, Typeset`size$$ = {576., {233., 220.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`a$1349$$ = 0, $CellContext`b$1350$$ = 
+    0, $CellContext`c$1351$$ = 0, $CellContext`d$1352$$ = 
+    0, $CellContext`z$1353$$ = 0, $CellContext`zoo$1354$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`b$$ = 
+        3, $CellContext`c$$ = -1, $CellContext`d$$ = 2, $CellContext`z$$ = 
+        7, $CellContext`zoo$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$1349$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$1350$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$1351$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$1352$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$1353$$, 0], 
+        Hold[$CellContext`zoo$$, $CellContext`zoo$1354$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Labeled[
+        Show[{
+          ReplaceAll[
+           Plot[
+            
+            Part[{$CellContext`c$$ ($CellContext`a$$ $CellContext`x + \
+$CellContext`b$$)^2 + $CellContext`d$$, $CellContext`c$$ ($CellContext`a$$ \
+$CellContext`x + $CellContext`b$$)^3 + $CellContext`d$$, $CellContext`c$$ 
+               Sqrt[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$, $CellContext`c$$ 
+               Abs[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$, $CellContext`c$$ 
+               Sin[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$, $CellContext`c$$ 
+               Cos[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$}, $CellContext`zoo$$], 
+            If[$CellContext`a$$ >= 0, 
+             
+             If[$CellContext`b$$ >= 
+              0, {$CellContext`x, -$CellContext`granica - $CellContext`b$$, \
+$CellContext`granica - $CellContext`b$$}, {$CellContext`x, \
+-$CellContext`granica - $CellContext`b$$, $CellContext`granica - \
+$CellContext`b$$}], 
+             
+             If[$CellContext`b$$ >= 
+              0, {$CellContext`x, -$CellContext`granica + $CellContext`b$$, \
+$CellContext`granica + $CellContext`b$$}, {$CellContext`x, \
+-$CellContext`granica + $CellContext`b$$, $CellContext`granica + \
+$CellContext`b$$}]], PlotStyle -> Directive[Red, Thick], PlotLabel -> Part[{
+               Column[{
+                 Style[
+                  Row[{"F(x) = c*f(a*x+b)+d"}], 20, Black], 
+                 Style[
+                  
+                  Row[{" F(x)= ", $CellContext`c$$ ($CellContext`a$$ \
+$CellContext`x + $CellContext`b$$)^2 + $CellContext`d$$}], 20, Red], 
+                 Spacer[10]}], 
+               Column[{
+                 Style[
+                  Row[{"F(x) = c*f(a*x+b)+d"}], 20, Black], 
+                 Style[
+                  
+                  Row[{" F(x)= ", $CellContext`c$$ ($CellContext`a$$ \
+$CellContext`x + $CellContext`b$$)^3 + $CellContext`d$$}], 20, Red], 
+                 Spacer[10]}], 
+               Column[{
+                 Style[
+                  Row[{"F(x) = c*f(a*x+b)+d"}], 20, Black], 
+                 Style[
+                  
+                  Row[{" F(x)= ", $CellContext`c$$ 
+                    Sqrt[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$}], 20, Red], 
+                 Spacer[10]}], 
+               Column[{
+                 Style[
+                  Row[{"F(x) = c*f(a*x+b)+d"}], 20, Black], 
+                 Style[
+                  
+                  Row[{"F(x) = ", $CellContext`c$$ 
+                    Abs[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$}], 20, Red], 
+                 Spacer[10]}], 
+               Column[{
+                 Style[
+                  Row[{"F(x) = c*f(a*x+b)+d"}], 20, Black], 
+                 Style[
+                  
+                  Row[{"F(x) = ", $CellContext`c$$ 
+                    Sin[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$}], 20, Red], 
+                 Spacer[10]}], 
+               Column[{
+                 Style[
+                  Row[{"F(x) = c*f(a*x+b)+d"}], 20, Black], 
+                 Style[
+                  
+                  Row[{"F(x) = ", $CellContext`c$$ 
+                    Cos[$CellContext`a$$ $CellContext`x + $CellContext`b$$] + \
+$CellContext`d$$}], 20, Red], 
+                 Spacer[10]}]}, $CellContext`zoo$$]], Line[
+             Pattern[$CellContext`x, 
+              BlankSequence[]]] :> Sequence[
+             Arrowheads[{-0.04, 0.04}], 
+             Arrow[$CellContext`x]]], 
+          ReplaceAll[
+           Plot[
+            Part[{$CellContext`x^2, $CellContext`x^3, 
+              Sqrt[$CellContext`x], 
+              Abs[$CellContext`x], 
+              Sin[$CellContext`x], 
+              
+              Cos[$CellContext`x]}, $CellContext`zoo$$], {$CellContext`x, \
+-$CellContext`granica, $CellContext`granica}, PlotStyle -> 
+            Directive[Blue, Thick]], Line[
+             Pattern[$CellContext`x, 
+              BlankSequence[]]] :> Sequence[
+             Arrowheads[{-0.04, 0.04}], 
+             Arrow[$CellContext`x]]]}, AxesOrigin -> {0, 0}, 
+         PlotRange -> {{-$CellContext`z$$, $CellContext`z$$}, \
+{-$CellContext`z$$, $CellContext`z$$}}, ImageSize -> Large, Frame -> True, 
+         GridLines -> Automatic, FrameStyle -> Directive[Black, 25]], 
+        Style["Autor: Amela Crnki\[CAcute], prof.", Bold]], 
+      "Specifications" :> {{{$CellContext`a$$, 1, 
+          Style["a=", 20]}, -1, 1, 2, Appearance -> 
+         "Labeled"}, {{$CellContext`b$$, 3, 
+          Style["b=", 20]}, -50, 50, 0.5, Appearance -> 
+         "Open"}, {{$CellContext`c$$, -1, 
+          Style["c=", 20]}, -1, 1, 2, Appearance -> 
+         "Open"}, {{$CellContext`d$$, 2, 
+          Style["d=", 20]}, -50, 50, 0.5, Appearance -> 
+         "Open"}, {{$CellContext`z$$, 7, 
+          Style["Zoom", 20]}, -100, 100, 0.5, Appearance -> 
+         "Labeled"}, {{$CellContext`zoo$$, 1, 
+          Style["  ", 20]}, {
+         1 -> Style["f(x)=\!\(\*SuperscriptBox[\(x\), \(2\)]\)   ", 20, 
+            RGBColor[0, 0, 1]], 2 -> 
+          Style["f(x)=\!\(\*SuperscriptBox[\(x\), \(3\)]\)   ", 20, 
+            RGBColor[0, 0, 1]], 3 -> 
+          Style["f(x)=\!\(\*SqrtBox[\(x\)]\)   ", 20, 
+            RGBColor[0, 0, 1]], 4 -> Style["f(x)=|x|   ", 20, 
+            RGBColor[0, 0, 1]], 5 -> Style["f(x)=sin(x) ", 20, 
+            RGBColor[0, 0, 1]], 6 -> Style["f(x)=cos(x) ", 20, 
+            RGBColor[0, 0, 1]]}, ImageSize -> 100}}, 
+      "Options" :> {ControlPlacement -> Left}, "DefaultOptions" :> {}],
+     ImageSizeCache->{948., {255., 261.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.8203432484662724`*^9, 3.820343261778447*^9}}]
+}, Open  ]]
+},
+WindowSize->{1264, 637},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 17502, 399, 490, "Input"],
+Cell[18085, 423, 8688, 184, 533, "Output"]
+}, Open  ]]
+}
+]
+*)
+

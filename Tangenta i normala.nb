@@ -1,0 +1,462 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19480,        454]
+NotebookOptionsPosition[     19130,        437]
+NotebookOutlinePosition[     19503,        453]
+CellTagsIndexPosition[     19460,        450]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"trig", "[", "x_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Sin", "[", "x", "]"}], "+", 
+      RowBox[{"Cos", "[", "x", "]"}]}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Dynamic", "[", 
+     RowBox[{"Refresh", "[", 
+      RowBox[{
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"xmin", ",", "xmax", ",", "plotoptions", ",", "curve"}], 
+          "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"xmin", "=", 
+           RowBox[{"-", "10"}]}], ";", " ", 
+          RowBox[{"xmax", "=", "10"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"plotoptions", "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"PlotRange", "\[Rule]", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "6"}], ",", "6"}], "}"}]}], "}"}]}], ",", " ", 
+             RowBox[{"PlotRangePadding", "\[Rule]", "0.25"}], ",", 
+             RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", "300"}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"curve", "[", "x0_", "]"}], ":=", 
+           RowBox[{"Show", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Plot", "[", 
+               RowBox[{
+                RowBox[{"trig", "[", "x", "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}], ",", 
+                RowBox[{"Evaluate", "[", "plotoptions", "]"}], ",", 
+                RowBox[{"PlotStyle", "\[Rule]", 
+                 RowBox[{"Directive", "[", 
+                  RowBox[{"Black", ",", "Thick"}], "]"}]}], ",", 
+                RowBox[{"PlotLabel", "\[Rule]", 
+                 RowBox[{"Row", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{
+                    "{", "\"\<y = f'(\!\(\*SubscriptBox[\(x\), \(0\)]\))(x-\!\
+\(\*SubscriptBox[\(x\), \(0\)]\))+\!\(\*SubscriptBox[\(y\), \(0\)]\)\>\"", 
+                    "}"}], "]"}], ",", "20", ",", "Blue"}], "]"}], ",", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\< y= \>\"", ",", 
+                    RowBox[{"Expand", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"trig", "'"}], "[", "x0", "]"}], 
+                    RowBox[{"(", 
+                    RowBox[{"x", "-", "x0"}], ")"}]}], "+", 
+                    RowBox[{"trig", "[", "x0", "]"}]}], "]"}]}], "}"}], "]"}],
+                     ",", "20", ",", "Blue"}], "]"}], ",", 
+                    RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}], ",", 
+                    "\"\<        \>\"", ",", 
+                    RowBox[{"Column", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{
+                    "{", "\"\<y =- \!\(\*FractionBox[\(1\), \(f' \
+\((\*SubscriptBox[\(x\), \(0\)])\)\)]\)(x-\!\(\*SubscriptBox[\(x\), \
+\(0\)]\))+\!\(\*SubscriptBox[\(y\), \(0\)]\)\>\"", "}"}], "]"}], ",", "20", 
+                    ",", "Red"}], "]"}], ",", 
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\< y= \>\"", ",", 
+                    RowBox[{"Expand", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1", 
+                    RowBox[{
+                    RowBox[{"trig", "'"}], "[", "x0", "]"}]]}], 
+                    RowBox[{"(", 
+                    RowBox[{"x", "-", "x0"}], ")"}]}], "+", 
+                    RowBox[{"trig", "[", "x0", "]"}]}], "]"}]}], "}"}], "]"}],
+                     ",", "20", ",", "Red"}], "]"}], ",", 
+                    RowBox[{"Spacer", "[", "10", "]"}]}], "}"}], "]"}]}], 
+                   "}"}], "]"}]}]}], "]"}], "/.", 
+              RowBox[{
+               RowBox[{"Line", "[", "x__", "]"}], "\[RuleDelayed]", 
+               RowBox[{"Sequence", "[", 
+                RowBox[{
+                 RowBox[{"Arrowheads", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", ".04"}], ",", ".04"}], "}"}], "]"}], ",", 
+                 RowBox[{"Arrow", "[", "x", "]"}]}], "]"}]}]}], ",", 
+             RowBox[{"Graphics", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"PointSize", "[", "0.015", "]"}], ",", 
+                RowBox[{"Point", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"x0", ",", 
+                   RowBox[{"trig", "[", "x0", "]"}]}], "}"}], "]"}]}], "}"}], 
+              "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"tline", "[", "x0_", "]"}], ":=", 
+           RowBox[{
+            RowBox[{"Plot", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"trig", "'"}], "[", "x0", "]"}], 
+                RowBox[{"(", 
+                 RowBox[{"x", "-", "x0"}], ")"}]}], "+", 
+               RowBox[{"trig", "[", "x0", "]"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}], ",", 
+              RowBox[{"PlotStyle", "\[Rule]", 
+               RowBox[{"Directive", "[", 
+                RowBox[{"Blue", ",", "Thick"}], "]"}]}]}], "]"}], "/.", 
+            RowBox[{
+             RowBox[{"Line", "[", "x__", "]"}], "\[RuleDelayed]", 
+             RowBox[{"Sequence", "[", 
+              RowBox[{
+               RowBox[{"Arrowheads", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", ".04"}], ",", ".04"}], "}"}], "]"}], ",", 
+               RowBox[{"Arrow", "[", "x", "]"}]}], "]"}]}]}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"nline", "[", "x0_", "]"}], ":=", 
+           RowBox[{
+            RowBox[{"Plot", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", 
+                 FractionBox["1", 
+                  RowBox[{
+                   RowBox[{"trig", "'"}], "[", "x0", "]"}]]}], 
+                RowBox[{"(", 
+                 RowBox[{"x", "-", "x0"}], ")"}]}], "+", 
+               RowBox[{"trig", "[", "x0", "]"}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "xmin", ",", "xmax"}], "}"}], ",", 
+              RowBox[{"PlotStyle", "\[Rule]", 
+               RowBox[{"Directive", "[", 
+                RowBox[{"Red", ",", "Thick"}], "]"}]}]}], "]"}], "/.", 
+            RowBox[{
+             RowBox[{"Line", "[", "x__", "]"}], "\[RuleDelayed]", 
+             RowBox[{"Sequence", "[", 
+              RowBox[{
+               RowBox[{"Arrowheads", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", ".04"}], ",", ".04"}], "}"}], "]"}], ",", 
+               RowBox[{"Arrow", "[", "x", "]"}]}], "]"}]}]}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Labeled", "[", 
+           RowBox[{
+            RowBox[{"Show", "[", 
+             RowBox[{
+              RowBox[{"curve", "[", "pt", "]"}], ",", 
+              RowBox[{"Through", "[", 
+               RowBox[{"showderivs", "[", "pt", "]"}], "]"}], ",", 
+              RowBox[{"ImageSize", "\[Rule]", "600"}], ",", 
+              RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+              RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+              RowBox[{"FrameStyle", "\[Rule]", 
+               RowBox[{"Directive", "[", 
+                RowBox[{"Black", ",", "25"}], "]"}]}]}], "]"}], ",", 
+            RowBox[{"Style", "[", 
+             RowBox[{
+             "\"\<Autor: Amela Crnki\[CAcute], prof.\>\"", ",", "Bold"}], 
+             "]"}]}], "]"}]}]}], "\[IndentingNewLine]", "\[IndentingNewLine]",
+         "]"}], ",", 
+       RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+        RowBox[{"{", 
+         RowBox[{"pt", ",", "showderivs", ",", "trig"}], "}"}]}]}], "]"}], 
+     "]"}]}], ",", 
+   RowBox[{"Style", "[", 
+    RowBox[{"\"\<                       f(x)=sin(x)+cos(x)\>\"", ",", "20"}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"pt", ",", "1.1", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<\!\(\*SubscriptBox[\(x\), \(0\)]\)\>\"", ",", "20"}], 
+        "]"}]}], "}"}], ",", 
+     RowBox[{"-", "10"}], ",", "10", ",", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Open\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showderivs", ",", 
+       RowBox[{"{", 
+        RowBox[{"tline", ",", "nline"}], "}"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<Prikazati pravu: \>\"", ",", "Bold"}], "]"}]}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"tline", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\< tangenta na graf funkcije f(x) u ta\[CHacek]ki \
+(\!\(\*SubscriptBox[\(x\), \(0\)]\),\!\(\*SubscriptBox[\(y\), \(0\)]\))  \
+\>\"", ",", " ", "Blue", ",", "Bold"}], "]"}]}], ",", 
+       RowBox[{"nline", "\[Rule]", 
+        RowBox[{"Style", "[", 
+         RowBox[{
+         "\"\< normala na graf funkcije f(x) u ta\[CHacek]ki \
+(\!\(\*SubscriptBox[\(x\), \(0\)]\),\!\(\*SubscriptBox[\(y\), \(0\)]\)) \>\"",
+           ",", "Red", ",", "Bold"}], "]"}]}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "CheckboxBar"}], ",", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Top"}]}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"pt", ",", "showderivs"}], "}"}]}], ",", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAGIQ3VKllSaX9MZxbY5JFojmurI+H0TnfH5VDKInhP5p
+AtELTOL6QfTpk31rQbTPmyNbQPSVKa2PQfSeZrZnIPrd7jvvQbTKqqoPIHpX
+8e4vIHpew7bfIJrFxYJBHkgvSl3BCqInLHjMD6JnfLgpAKLZ/n6QBtFf2t4o
+guh7Dou1QHTIybdgumrqSlcQreG7xBdEiwkdjQbRJx0dYkB037YXtzakvnFs
+mXD4Noi++4vxEYiec10PTOtdufUMRDM8+PkCRL/rO/8ORLfZPH0Pov8d0xTZ
+CJLX0ZED0TInEpRBtNE8IVUQbb1vujaIDtvWawai+Zf9swHR1x6+cALR3oI3
+cxnLgPaxM+aDaK5zQVdA9NVPlWDaNKT68U4gXRe0/AmIBgAaw8Qh
+  "]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`pt$$ = 
+    1.1, $CellContext`showderivs$$ = {$CellContext`tline, $CellContext`nline},
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[
+       Style["                       f(x)=sin(x)+cos(x)", 20]], 
+      Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`pt$$], 1.1, 
+       Style["\!\(\*SubscriptBox[\(x\), \(0\)]\)", 20]}, -10, 10, 0.01}, {{
+       Hold[$CellContext`showderivs$$], {$CellContext`tline, \
+$CellContext`nline}, 
+       Style["Prikazati pravu: ", Bold]}, {$CellContext`tline -> 
+       Style[" tangenta na graf funkcije f(x) u ta\[CHacek]ki \
+(\!\(\*SubscriptBox[\(x\), \(0\)]\),\!\(\*SubscriptBox[\(y\), \(0\)]\))  ", 
+         RGBColor[0, 0, 1], Bold], $CellContext`nline -> 
+       Style[" normala na graf funkcije f(x) u ta\[CHacek]ki \
+(\!\(\*SubscriptBox[\(x\), \(0\)]\),\!\(\*SubscriptBox[\(y\), \(0\)]\)) ", 
+         RGBColor[1, 0, 0], Bold]}}}, Typeset`size$$ = {540., {220., 208.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`pt$13699$$ = 0, $CellContext`showderivs$13700$$ = 
+    False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`pt$$ = 
+        1.1, $CellContext`showderivs$$ = {$CellContext`tline, \
+$CellContext`nline}}, "ControllerVariables" :> {
+        Hold[$CellContext`pt$$, $CellContext`pt$13699$$, 0], 
+        Hold[$CellContext`showderivs$$, $CellContext`showderivs$13700$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`trig[
+          Pattern[$CellContext`x, 
+           Blank[]]] := Sin[$CellContext`x] + Cos[$CellContext`x]; Dynamic[
+         Refresh[
+          
+          Module[{$CellContext`xmin$, $CellContext`xmax$, \
+$CellContext`plotoptions$, $CellContext`curve$}, $CellContext`xmin$ = -10; \
+$CellContext`xmax$ = 
+            10; $CellContext`plotoptions$ = {
+             PlotRange -> {{-10, 10}, {-6, 6}}, PlotRangePadding -> 0.25, 
+              AspectRatio -> Automatic, ImageSize -> 300}; $CellContext`curve$[
+              Pattern[$CellContext`x0$, 
+               Blank[]]] := Show[
+              ReplaceAll[
+               Plot[
+                $CellContext`trig[$CellContext`x], {$CellContext`x, \
+$CellContext`xmin$, $CellContext`xmax$}, 
+                Evaluate[$CellContext`plotoptions$], PlotStyle -> 
+                Directive[Black, Thick], PlotLabel -> Row[{
+                   Column[{
+                    Style[
+                    
+                    Row[{"y = f'(\!\(\*SubscriptBox[\(x\), \
+\(0\)]\))(x-\!\(\*SubscriptBox[\(x\), \(0\)]\))+\!\(\*SubscriptBox[\(y\), \(0\
+\)]\)"}], 20, Blue], 
+                    Style[
+                    Row[{" y= ", 
+                    Expand[
+                    Derivative[
+                    1][$CellContext`trig][$CellContext`x0$] ($CellContext`x - \
+$CellContext`x0$) + $CellContext`trig[$CellContext`x0$]]}], 20, Blue], 
+                    Spacer[10]}], "        ", 
+                   Column[{
+                    Style[
+                    
+                    Row[{"y =- \!\(\*FractionBox[\(1\), \(f' \
+\((\*SubscriptBox[\(x\), \(0\)])\)\)]\)(x-\!\(\*SubscriptBox[\(x\), \
+\(0\)]\))+\!\(\*SubscriptBox[\(y\), \(0\)]\)"}], 20, Red], 
+                    Style[
+                    Row[{" y= ", 
+                    
+                    Expand[(-(1/Derivative[
+                    1][$CellContext`trig][$CellContext`x0$])) ($CellContext`x - \
+$CellContext`x0$) + $CellContext`trig[$CellContext`x0$]]}], 20, Red], 
+                    Spacer[10]}]}]], Line[
+                 Pattern[$CellContext`x, 
+                  BlankSequence[]]] :> Sequence[
+                 Arrowheads[{-0.04, 0.04}], 
+                 Arrow[$CellContext`x]]], 
+              Graphics[{
+                PointSize[0.015], 
+                Point[{$CellContext`x0$, 
+                  $CellContext`trig[$CellContext`x0$]}]}]]; $CellContext`tline[
+              Pattern[$CellContext`x0$, 
+               Blank[]]] := ReplaceAll[
+              Plot[
+              Derivative[
+                 1][$CellContext`trig][$CellContext`x0$] ($CellContext`x - \
+$CellContext`x0$) + $CellContext`trig[$CellContext`x0$], {$CellContext`x, \
+$CellContext`xmin$, $CellContext`xmax$}, PlotStyle -> Directive[Blue, Thick]],
+               Line[
+                Pattern[$CellContext`x, 
+                 BlankSequence[]]] :> Sequence[
+                Arrowheads[{-0.04, 0.04}], 
+                Arrow[$CellContext`x]]]; $CellContext`nline[
+              Pattern[$CellContext`x0$, 
+               Blank[]]] := ReplaceAll[
+              
+              Plot[(-(1/Derivative[
+                  1][$CellContext`trig][$CellContext`x0$])) ($CellContext`x - \
+$CellContext`x0$) + $CellContext`trig[$CellContext`x0$], {$CellContext`x, \
+$CellContext`xmin$, $CellContext`xmax$}, PlotStyle -> Directive[Red, Thick]], 
+              Line[
+                Pattern[$CellContext`x, 
+                 BlankSequence[]]] :> Sequence[
+                Arrowheads[{-0.04, 0.04}], 
+                Arrow[$CellContext`x]]]; Labeled[
+             Show[
+              $CellContext`curve$[$CellContext`pt$$], 
+              Through[
+               $CellContext`showderivs$$[$CellContext`pt$$]], ImageSize -> 
+              600, Frame -> True, GridLines -> Automatic, FrameStyle -> 
+              Directive[Black, 25]], 
+             Style["Autor: Amela Crnki\[CAcute], prof.", Bold]]], 
+          TrackedSymbols :> {$CellContext`pt$$, $CellContext`showderivs$$, \
+$CellContext`trig}]]), "Specifications" :> {
+        Style[
+        "                       f(x)=sin(x)+cos(x)", 
+         20], {{$CellContext`pt$$, 1.1, 
+          Style["\!\(\*SubscriptBox[\(x\), \(0\)]\)", 20]}, -10, 10, 0.01, 
+         Appearance -> 
+         "Open"}, {{$CellContext`showderivs$$, {$CellContext`tline, \
+$CellContext`nline}, 
+          Style["Prikazati pravu: ", Bold]}, {$CellContext`tline -> 
+          Style[" tangenta na graf funkcije f(x) u ta\[CHacek]ki \
+(\!\(\*SubscriptBox[\(x\), \(0\)]\),\!\(\*SubscriptBox[\(y\), \(0\)]\))  ", 
+            RGBColor[0, 0, 1], Bold], $CellContext`nline -> 
+          Style[" normala na graf funkcije f(x) u ta\[CHacek]ki \
+(\!\(\*SubscriptBox[\(x\), \(0\)]\),\!\(\*SubscriptBox[\(y\), \(0\)]\)) ", 
+            RGBColor[1, 0, 0], Bold]}, ControlType -> CheckboxBar, 
+         ControlPlacement -> Top}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`pt$$, $CellContext`showderivs$$}, 
+        AutorunSequencing -> {1, 2}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{587., {285., 291.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8203430960947156`*^9, 3.8203431459484253`*^9}]
+}, Open  ]]
+},
+WindowSize->{1280, 637},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 11067, 258, 524, "Input"],
+Cell[11650, 282, 7464, 152, 591, "Output"]
+}, Open  ]]
+}
+]
+*)
+
